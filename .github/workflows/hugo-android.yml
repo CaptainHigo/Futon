@@ -30,7 +30,10 @@ jobs:
       - name: Compiler et vérifier
         run: |
           chmod +x gradlew
-          ./gradlew assembleDebug testDebugUnitTest lintDebug --no-daemon -PversionCode=90901 -PversionName=9.9-hugo.1
+          ./gradlew assembleDebug testDebugUnitTest lintDebug --no-daemon -PversionCode=90901 -PversionName=9.9-hugo.1 || {
+            cat app/build/intermediates/lint_intermediate_text_report/debug/lintReportDebug/lint-results-debug.txt
+            exit 1
+          }
       - uses: actions/upload-artifact@v4
         with:
           name: Futon-Hugo
