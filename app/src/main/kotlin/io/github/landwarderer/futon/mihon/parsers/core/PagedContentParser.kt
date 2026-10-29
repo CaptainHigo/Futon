@@ -13,7 +13,7 @@ import io.github.landwarderer.futon.mihon.parsers.util.Paginator
 public abstract class PagedContentParser(
 	context: ContentLoaderContext,
 	source: ContentSource,
-	@VisibleForTesting(otherwise = VisibleForTesting.PROTECTED) @JvmField public val pageSize: Int,
+	@field:VisibleForTesting(otherwise = VisibleForTesting.PROTECTED) @JvmField public val pageSize: Int,
 	searchPageSize: Int = pageSize,
 ) : AbstractContentParser(context, source) {
 

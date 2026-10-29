@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<!-- Personal fork 2026-10-29: these %d counters only accept integers.
+     The CLDR 'many' form reported by lint for cs/lt applies to fractional values. -->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingQuantity">
     <plurals name="items">
         <item quantity="one">%1$d předmět</item>
         <item quantity="few">%1$d předměty</item>
