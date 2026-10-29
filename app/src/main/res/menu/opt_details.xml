@@ -3,7 +3,12 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto">
 
-	<item
+	<item android:id="@+id/action_personal_reading"
+        android:title="@string/personal_reading_title"
+        android:orderInCategory="1"
+        app:showAsAction="never" />
+
+    <item
 		android:id="@+id/action_share"
 		android:icon="?actionModeShareDrawable"
 		android:orderInCategory="15"

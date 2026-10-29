@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Personal fork, 2026-10-29. -->
+<resources>
+    <string name="personal_reading_title">Ma note et mes mémos</string>
+    <string name="personal_reading_rated">Attribuer une note</string>
+    <string name="personal_reading_rating">Note sur 10, par demi-point</string>
+    <string name="personal_reading_unrated">Sans note</string>
+    <string name="personal_reading_chapter">Mémo du chapitre</string>
+    <string name="personal_reading_general">Mémo général</string>
+    <string name="personal_reading_memo">À la fin du chapitre…</string>
+    <string name="personal_reading_backup">Ces mémos restent privés sur cet appareil. Pour les sauvegarder et les restaurer, incluez les Paramètres dans la sauvegarde Futon.</string>
+    <string name="personal_reading_save">Enregistrer</string>
+    <string name="personal_reading_save_error">Enregistrement impossible. Réessayez avant de fermer.</string>
+    <string name="personal_reading_invalid">Les notes enregistrées sont illisibles. Restaurez une sauvegarde ; aucune donnée n’a été remplacée.</string>
+</resources>

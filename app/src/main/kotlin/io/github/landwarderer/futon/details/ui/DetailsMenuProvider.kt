@@ -58,7 +58,15 @@ class DetailsMenuProvider(
 	override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
 		val manga = viewModel.getMangaOrNull() ?: return false
 		when (menuItem.itemId) {
-			R.id.action_share -> {
+			R.id.action_personal_reading -> {
+                PersonalReadingDialog.newInstance(
+                    manga.id,
+                    manga.title,
+                    viewModel.chapters.value.orEmpty(),
+                ).show(activity.supportFragmentManager, "personal_reading")
+            }
+
+            R.id.action_share -> {
 				router.showShareDialog(manga)
 			}
 
