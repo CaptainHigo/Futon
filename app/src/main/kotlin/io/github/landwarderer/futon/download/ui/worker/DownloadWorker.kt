@@ -68,6 +68,8 @@ import io.github.landwarderer.futon.local.data.output.LocalMangaOutput
 import io.github.landwarderer.futon.local.domain.DeleteReadChaptersUseCase
 import io.github.landwarderer.futon.local.domain.MangaLock
 import io.github.landwarderer.futon.local.domain.model.LocalManga
+import io.github.landwarderer.futon.novel.data.source.LNCrawlerChapterContent
+import io.github.landwarderer.futon.novel.data.source.NovelParserSource
 import io.github.landwarderer.futon.reader.domain.PageLoader
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
@@ -238,7 +240,12 @@ class DownloadWorker @AssistedInject constructor(
 						continue
 					}
 					val pages = runFailsafe {
-						repo.getPages(chapter.value)
+						val chapterPages = repo.getPages(chapter.value)
+						if (repo.source == NovelParserSource.LNCRAWLER) {
+							LNCrawlerChapterContent.downloadPages(chapterPages)
+						} else {
+							chapterPages
+						}
 					} ?: continue
 					val pageCounter = AtomicInteger(0)
 					channelFlow {

@@ -30,7 +30,7 @@ jobs:
       - name: Compiler et vérifier
         run: |
           chmod +x gradlew
-          ./gradlew assembleDebug testDebugUnitTest lintDebug --no-daemon -PversionCode=90901 -PversionName=9.9-hugo.1 || {
+          ./gradlew assembleDebug testDebugUnitTest lintDebug --no-daemon -PversionCode=90902 -PversionName=9.9-hugo.2 || {
             cat app/build/intermediates/lint_intermediate_text_report/debug/lintReportDebug/lint-results-debug.txt
             exit 1
           }

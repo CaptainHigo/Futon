@@ -240,9 +240,7 @@ class LNCrawlerRepository(
 	public override suspend fun getPagesImpl(chapter: MangaChapter): List<MangaPage> {
 		val json = JSONObject(fetchString(chapter.url))
 		val bodyHtml = json.optString("body")
-		val doc = Jsoup.parseBodyFragment(bodyHtml)
-		doc.select("script, style, iframe").remove()
-		val cleanHtml = doc.body().html()
+		val cleanHtml = LNCrawlerChapterContent.normalize(bodyHtml, json.optString("images_path"), chapter.url)
 
 		return listOf(
 			MangaPage(
